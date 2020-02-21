@@ -27,6 +27,7 @@
                 Port.Read(byteArray, 0, bytesToRead);
                 byteList.AddRange(byteArray);
                 System.Threading.Tasks.Task.Delay(10).Wait();
+                System.Windows.Forms.Application.DoEvents();
             } while (Port.BytesToRead > 0);
             return byteList;
         }
